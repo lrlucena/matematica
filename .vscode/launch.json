@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Executar Potigol",
+            "type": "java",
+            "request": "launch",
+            "classPaths": ["/usr/local/lib/potigol.jar"],            
+            "mainClass": "br.edu.ifrn.potigol.Principal",
+            "args": "-c -w ${file}",
+        }
+    ]
+}

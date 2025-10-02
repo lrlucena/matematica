@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "Linguagem Potigol",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+	"postCreateCommand": "sudo sh -c '(echo \"#!/usr/bin/env sh\" && curl -L https://github.com/potigol/potigol/releases/download/1.0.0-RC2/potigol.jar) > /usr/local/lib/potigol.jar && echo \"#!/bin/bash\\n\\njava -jar /usr/local/lib/potigol.jar -c -w \\$* \" | sudo tee /usr/local/bin/potigol && sudo chmod +x /usr/local/bin/potigol'",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"potigol.path": "/usr/local/lib/potigol.jar",
+				"[potigol]": {
+					"editor.tabSize": 2,
+					"editor.insertSpaces": true,
+					"editor.detectIndentation": false
+				},
+				"files.associations": {
+					"*.poti": "potigol"
+				},
+				"workbench.colorTheme": "Default Dark Modern"
+			},
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"Potigol.potigol-language",
+				"designliquido.designliquido-vscode",
+				"potigol.potigol-language"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "false",
+			"installGradle": "false"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	}
+}
