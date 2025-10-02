@@ -4,7 +4,7 @@
 divide(a, b: Inteiro): Lógico = 
   para n de -100 até 100
     se a * n == b
-    gere verdadeiro
+    gere n
   fim.tamanho > 0
 
 ## Forma computacionalmente mais eficiente
