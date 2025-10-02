@@ -1,0 +1,54 @@
+# Definições 
+
+## Verifica se a|b
+divide(a, b: Inteiro): Lógico = 
+  para n de -100 até 100
+    se a * n == b
+    gere verdadeiro
+  fim.tamanho > 0
+
+## Forma computacionalmente mais eficiente
+divide2(a, b: Inteiro) = escolha (a, b)
+  caso (_, 0) => verdadeiro
+  caso (0, _) => falso
+  caso (a, b) => b mod a == 0
+fim
+
+par(a: Inteiro): Lógico = divide(2, a)
+
+ímpar(a: Inteiro): Lógico =
+  para n de -20 até 20
+    se a == 2 * n + 1
+    gere verdadeiro
+  fim.tamanho > 0
+
+ímpar2(a: Inteiro): Lógico = não par(a)
+
+divisores(a: Inteiro): Lista[Inteiro] =
+  para n de -a até a
+    se divide(n, a)
+    gere n
+  fim
+
+divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
+
+primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
+
+composto(a: Inteiro) = 
+  divisores_positivos(a).selecione(n => n > 1 e n < a).tamanho > 0
+
+composto2(a: Inteiro) = a > 0 e divisores_positivos(a) <> [1, a]
+
+
+## Testes
+a = 2
+b = 5
+escreva "{a}|{b}? {divide(a, b)}"
+
+
+escreva divide(2, 5)
+escreva "Digite um número:"
+n = leia_inteiro
+escreva "{n} é par? {par(n)}."
+escreva "Divisores de {n}: {divisores(n)}."
+

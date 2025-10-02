@@ -1,0 +1,22 @@
+divide(a, b: Inteiro) = escolha (a, b)
+  caso (_, 0) => verdadeiro
+  caso (0, _) => falso
+  caso (a, b) => b mod a == 0
+fim
+
+divisores(a: Inteiro): Lista[Inteiro] =
+  para n de -a até a
+    se divide(n, a)
+    gere n
+  fim
+
+divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
+
+primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
+
+primos = para n de 1 até 100 se primo(n) gere n fim
+
+para n de 1 até 10 faça
+  a = n * n + n + 41
+  escreva "n = {n}, {a} {se primo(a) então "primo" senão "não é primo" fim}"
+fim
