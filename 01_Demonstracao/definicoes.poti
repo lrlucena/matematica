@@ -1,6 +1,7 @@
-# Definições 
+# Definições
 
 ## Verifica se a|b
+## a divide b se existe n tal que a*n = b
 divide(a, b: Inteiro): Lógico = 
   para n de -100 até 100
     se a * n == b
@@ -14,8 +15,10 @@ divide2(a, b: Inteiro) = escolha (a, b)
   caso (a, b) => b mod a == 0
 fim
 
+## a é par se 2|a
 par(a: Inteiro): Lógico = divide(2, a)
 
+## a é ímpar se existe n tal que a = 2*n + 1
 ímpar(a: Inteiro): Lógico =
   para n de -20 até 20
     se a == 2 * n + 1
@@ -24,6 +27,7 @@ par(a: Inteiro): Lógico = divide(2, a)
 
 ímpar2(a: Inteiro): Lógico = não par(a)
 
+## Retorna a lista de divisores de a
 divisores(a: Inteiro): Lista[Inteiro] =
   para n de -a até a
     se divide(n, a)
@@ -32,13 +36,23 @@ divisores(a: Inteiro): Lista[Inteiro] =
 
 divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
 
+
+## a é primo se seus únicos divisores positivos são 1 e ele mesmo
 primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
+## a é composto se tem algum divisor positivo além de 1 e ele mesmo
 composto(a: Inteiro) = 
   divisores_positivos(a).selecione(n => n > 1 e n < a).tamanho > 0
 
+## a é composto se tem algum divisor positivo além de 1 e ele mesmo
 composto2(a: Inteiro) = a > 0 e divisores_positivos(a) <> [1, a]
 
+## a é quadrado perfeito se existe n tal que n*n = a
+quadrado_perfeito(a: Inteiro) =
+  para n de 0 até a
+    se n * n == a
+    gere verdadeiro
+  fim.tamanho > 0
 
 ## Testes
 a = 2

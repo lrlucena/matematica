@@ -1,3 +1,5 @@
+# Definições
+
 divide(a, b: Inteiro) = escolha (a, b)
   caso (_, 0) => verdadeiro
   caso (0, _) => falso
@@ -16,7 +18,10 @@ primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
 primos = para n de 1 até 1000 se primo(n) gere n fim
 
-para n de 4 até 10 passo 2 faça
+# Conjectura de Goldbach
+# Todo número par maior que 2 pode ser escrito como a soma de dois números primos.
+escreva "Conjectura de Goldbach"
+para n de 4 até 20 passo 2 faça
   para i em primos, j em primos faça
     se i <= j e n == i + j então
       escreva "{n} = {i} + {j}"

@@ -15,10 +15,13 @@ divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
 primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
 primos = para n de 1 até 100 se primo(n) gere n fim
+       # [n | n <- 1..100, primo(n)]
+
 
 escreva "Números primos entre 1 e 100: {primos}"
 para n de 1 até 50 faça
   a = n * n + n + 41
+  # procurando um contra-exemplo
   se não primo(a) então
     escreva "n = {n}, {a} não é primo"
     # escreva "n = {n}, {a} {se primo(a) então "primo" senão "não é primo" fim}"
