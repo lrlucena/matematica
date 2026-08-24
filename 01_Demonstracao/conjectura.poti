@@ -12,7 +12,9 @@ divisores(a: Inteiro): Lista[Inteiro] =
     gere n
   fim
 
-divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
+positivo(a: Inteiro) = a > 0
+
+divisores_positivos(a: Inteiro) = divisores(a).selecione(positivo)
 
 primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
