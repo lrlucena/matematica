@@ -8,8 +8,8 @@ def divide(a, b: Inteiro): Lógico =
     gere n
   fim.tamanho > 0
 
-#x, y = 2, 10
-#escreva "{x} divide {y}: {divide(x, y)}"  
+x, y = 7, 10
+escreva "{x} divide {y}: {divide(x, y)}"  
 
 ## Forma computacionalmente mais eficiente
 def divide2(a, b: Inteiro) = escolha (a, b)
@@ -41,7 +41,8 @@ def divisores(a: Inteiro): Lista[Inteiro] =
 def divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
 
 
-## a é primo se seus únicos divisores positivos são 1 e ele mesmo
+## a é primo se ele for maior do que 1 e
+## seus únicos divisores positivos são 1 e ele mesmo
 def primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
 ## a é composto se tem algum divisor positivo além de 1 e ele mesmo
