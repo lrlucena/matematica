@@ -4,9 +4,7 @@ Clique no botão para abrir o ambiente de execução do Codespace
 
 [![Execute direto no GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/lrlucena/matematica?quickstart=1)
 
-https://github.com/codespaces/new/lrlucena/matematica?quickstart=1
-
-
+<https://github.com/codespaces/new/lrlucena/matematica?quickstart=1>
 
 ## 1. Técnicas de Demonstração
 
@@ -28,6 +26,7 @@ def divide(a, b: Inteiro): Lógico =
 Todo número par maior que 2 pode ser escrito como a soma de dois números primos.
 
 O programa a seguir testa se a conjectura é válida para os números pares de 4 até 100
+
 ```python
 para n de 4 até 100 passo 2 faça
   para i em primos, j em primos faça
@@ -42,8 +41,7 @@ fim
 
 Objetivo: encontrar um contra-exemplo que mostre que uma afirmação é falsa.
 
-**Afirmação**: 
-`n² + n + 41` é um número primo para qualquer n >= 0.
+**Afirmação**: `n² + n + 41` é um número primo para qualquer n >= 0.
 
 Como achar um contra-exemplo? Escrevendo um programa que testa vários valores de n até encontrar um valor de `n` que quando aplicado à expressão não gera um número primo.
 
@@ -63,4 +61,3 @@ fim
 ## 3. Relações
 
 ## 4. Funções
-

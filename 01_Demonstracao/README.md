@@ -40,7 +40,7 @@ fim
 
 `n² + n + 41` é um número primo para qualquer n >= 0.
 
-Como achar um contra-exemplo? Escrevendo um programa que teste vários valores de n até encontrar um contra-exemplo.
+Como achar um contra-exemplo? Escrevendo um programa que teste vários valores de n até encontrar um valor que torne a afirmação falsa.
 
 ```python
 para n de 1 até 30 faça  # até 50

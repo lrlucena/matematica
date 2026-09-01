@@ -17,9 +17,14 @@ primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 primos = para n de 1 até 100 se primo(n) gere n fim
        # {n | n <- 1..100, primo(n)}
 
-escreva "Números primos entre 1 e 100: {primos}"
+def par(a: Inteiro): Lógico = divide(2, a)
 
-para n de 1 até 30 faça  # até 50
+def ímpar(a: Inteiro): Lógico = não par(a)
+
+# escreva "Números primos entre 1 e 100: {primos}"
+
+# Refutar `n² + n + 41` é um número primo para qualquer n >= 0
+para n de 1 até 10 faça  # até 50
   a = n * n + n + 41
   # procurando um contra-exemplo
   se não primo(a) então
@@ -27,3 +32,10 @@ para n de 1 até 30 faça  # até 50
     escreva "n = {n}, {n}² + {n} + 41 = {a} não é primo"
   fim
 fim
+
+# refutar se um inteiro p é primo então p é ímpar
+#para n de 1 até 100 faça
+#  se primo(n) e não ímpar(n) então
+#    escreva "Achei um contra-exemplo: {p} é primo mas não é ímpar!"
+#  fim
+#fim
