@@ -22,8 +22,7 @@ def divide(a, b: Inteiro): Lógico =
 
 ### Conjecturas
 
-**Conjectura de Goldbach**: 
-Todo número par maior que 2 pode ser escrito como a soma de dois números primos.
+**Conjectura de Goldbach**: Todo número par maior que 2 pode ser escrito como a soma de dois números primos.
 
 O programa a seguir testa se a conjectura é válida para os números pares de 4 até 100
 

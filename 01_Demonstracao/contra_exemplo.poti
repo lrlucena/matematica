@@ -10,9 +10,9 @@ divisores(a: Inteiro): Lista[Inteiro] =
     gere n
   fim
 
-divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
+def divisores_positivos(a: Inteiro) = divisores(a).selecione(_ > 0)
 
-primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
+def primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
 primos = para n de 1 até 100 se primo(n) gere n fim
        # {n | n <- 1..100, primo(n)}
@@ -21,9 +21,14 @@ def par(a: Inteiro): Lógico = divide(2, a)
 
 def ímpar(a: Inteiro): Lógico = não par(a)
 
+# ###
+# Busca de Contra-exemplos
+# ###
+
 # escreva "Números primos entre 1 e 100: {primos}"
 
 # Refutar `n² + n + 41` é um número primo para qualquer n >= 0
+escreva "Procurando um contra-exemplo para `n² + n + 41` é um número primo para qualquer n >= 0"
 para n de 1 até 10 faça  # até 50
   a = n * n + n + 41
   # procurando um contra-exemplo
