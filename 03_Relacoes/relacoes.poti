@@ -1,4 +1,4 @@
-# Definição de Conjunto
+# Conjuntos
 
 tipo T = Inteiro
 
@@ -16,12 +16,20 @@ tipo Conjunto
   def complemento(universo: Conjunto) = universo.diferença(isto)
 fim
 
-a = Conjunto([1,3,2,6])
-b = Conjunto([3,4,0,7])
-escreva a.elementos
-escreva b.elementos
+tipo Relacao = Lista[(T, T)]
 
-c = a.união(b)
-d = a.interseção(b)
-escreva c.elementos
-escreva d.elementos
+###
+
+def produto_cartesiano(a, b: Conjunto) =
+  para x em a.elementos, y em b.elementos gere (x, y) fim
+
+def inversa(relacao: Relacao) =
+  para (x, y) em relacao gere (y, x) fim
+
+A = Conjunto([1, 2, 3])
+B = Conjunto([4, 5])
+
+escreva produto_cartesiano(A, B)
+
+R = [(1, 2), (2, 3), (3, 1)]
+escreva inversa(R)
