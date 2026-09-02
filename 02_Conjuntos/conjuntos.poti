@@ -1,0 +1,25 @@
+# Definição de Conjunto de Inteiros
+
+tipo Conjunto
+  _elem: Lista[Inteiro]
+  val elementos = _elem.ordene.divida_quando(_ <> _).mapeie(_.cabeça)
+
+  def união(b: Conjunto) = Conjunto(elementos + b.elementos)
+  
+  def interseção(b: Conjunto) = 
+    Conjunto(para elem em elementos se b.elementos.contém(elem) gere elem fim)
+  
+  def diferença(b: Conjunto) = Conjunto(elementos - b.elementos)
+  
+  def complemento(universo: Conjunto) = universo.diferença(isto)
+fim
+
+a = Conjunto([1,3,2,6])
+b = Conjunto([3,4,0,7])
+escreva a.elementos
+escreva b.elementos
+
+c = a.união(b)
+d = a.interseção(b)
+escreva c.elementos
+escreva d.elementos
