@@ -52,7 +52,7 @@ def composto(a: Inteiro) =
     .tamanho > 0
 
 ## a é composto se tem algum divisor positivo além de 1 e ele mesmo
-def composto2(a: Inteiro) = a > 0 e divisores_positivos(a) <> [1, a]
+def composto2(a: Inteiro) = divisores_positivos(a) <> [1, a]
 
 ## a é composto se for maior do que 1 e não for primo
 def composto3(a: Inteiro) = a > 1 e não primo(a)

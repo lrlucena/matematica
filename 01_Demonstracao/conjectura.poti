@@ -1,29 +1,30 @@
 # Definições
 
-divide(a, b: Inteiro) = escolha (a, b)
+def divide(a, b: Inteiro) = escolha (a, b)
   caso (_, 0) => verdadeiro
   caso (0, _) => falso
   caso (a, b) => b mod a == 0
 fim
 
-divisores(a: Inteiro): Lista[Inteiro] =
+def divisores(a: Inteiro): Lista[Inteiro] =
   para n de -a até a
     se divide(n, a)
     gere n
   fim
 
-positivo(a: Inteiro) = a > 0
+def positivo(a: Inteiro) = a > 0
 
-divisores_positivos(a: Inteiro) = divisores(a).selecione(positivo)
+def divisores_positivos(a: Inteiro) = divisores(a).selecione(positivo)
 
-primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
+def primo(a: Inteiro) = a > 1 e divisores_positivos(a) == [1, a]
 
 primos = para n de 1 até 1000 se primo(n) gere n fim
 
 # Conjectura de Goldbach
 # Todo número par maior que 2 pode ser escrito como a soma de dois números primos.
-escreva "Conjectura de Goldbach"
-para n de 4 até 20 passo 2 faça
+escreva "Conjectura de Goldbach:
+        |  Todo número par maior que 2 pode ser escrito como a soma de dois números primos."
+para n de 4 até 100 passo 2 faça
   para i em primos, j em primos faça
     se i <= j e n == i + j então
       escreva "{n} = {i} + {j}"

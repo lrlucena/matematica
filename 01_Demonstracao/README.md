@@ -3,8 +3,7 @@
 ## Definição
 
 ```python
-## Verifica se a|b
-## a divide b se existe n tal que a*n = b
+## a divide b (a|b) se existe n tal que a*n = b
 def divide(a, b: Inteiro): Lógico = 
   para n de -100 até 100
     se a * n == b
