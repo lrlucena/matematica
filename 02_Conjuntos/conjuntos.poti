@@ -4,24 +4,36 @@ tipo T = Inteiro
 
 tipo Conjunto
   _elem: Lista[T]
+  # elementos do conjunto
   val elementos = _elem.ordene.divida_quando(_ <> _).mapeie(_.cabeça)
-
+  # representação textual do conjunto
+  def texto() = '{' + elementos.junte(", ") + '}'
+  # verifica se um elemento pertence ao conjunto
+  def pertence(elemento: T) = elementos.contém(elemento)
+  # verifica se o conjunto contém o conjunto b
+  def contém(b: Conjunto) = elementos.injete(verdadeiro)((c, x) => c e b.pertence(x))
+  # verifica se o conjunto é igual a outro conjunto
+  def igual(b: Conjunto) = isto.contém(b) e b.contém(isto)
+  # versão alternativa de igual
+  def igual2(b: Conjunto) = isto.elementos == b.elementos
+  # união com o conjunto b
   def união(b: Conjunto) = Conjunto(elementos + b.elementos)
-  
+  # interseção com o conjunto b
   def interseção(b: Conjunto) = 
     Conjunto(para elem em elementos se b.elementos.contém(elem) gere elem fim)
-  
+  # diferença entre conjuntos
   def diferença(b: Conjunto) = Conjunto(elementos - b.elementos)
-  
+  # compleneto do conjunto
   def complemento(universo: Conjunto) = universo.diferença(isto)
 fim
 
 a = Conjunto([1,3,2,6])
 b = Conjunto([3,4,0,7])
-escreva a.elementos
-escreva b.elementos
+escreva a.texto
+escreva b.texto
 
 c = a.união(b)
 d = a.interseção(b)
-escreva c.elementos
-escreva d.elementos
+escreva c.texto
+escreva d.texto
+escreva c.igual(d)
