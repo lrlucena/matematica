@@ -26,10 +26,27 @@ def produto_cartesiano(a, b: Conjunto) =
 def inversa(relacao: Relacao) =
   para (x, y) em relacao gere (y, x) fim
 
+def composicao(r, s: Relacao) = 
+  para (a, b) em r, (c, d) em s se b==c gere (a, d) fim
+
+def distintos(a: Relacao) =
+  a.ordene.divida_quando(_ <> _).mapeie(_.cabeça)
+
+def fecho_transitivo(r: Relacao): Relacao
+  r2 = distintos(r + composicao(r, r))
+  se r2 == r
+    então r
+    senão fecho_transitivo(r2)
+  fim
+fim
+
 A = Conjunto([1, 2, 3])
 B = Conjunto([4, 5])
 
-escreva produto_cartesiano(A, B)
+#escreva produto_cartesiano(A, B)
 
 R = [(1, 2), (2, 3), (3, 1)]
-escreva inversa(R)
+#escreva inversa(R)
+
+#escreva composicao(R, R)
+escreva fecho_transitivo(R)

@@ -1,0 +1,11 @@
+def fecho_transitivo(R):
+    novos = {
+        (a, c)
+        for (a, b) in R
+        for (x, c) in R
+        if b == x
+    }
+
+    R2 = R | novos
+
+    return R if R2 == R else fecho_transitivo(R2)
